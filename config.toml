@@ -9,7 +9,7 @@ contentDir             = "content"
 languageCode           = "en-us"
 layoutDir              = "layouts"
 publishDir             = "public"
-theme                  = "pixyll"
+theme                  = "pixyll-custom"
 title                  = "Omar Al-Safi"
 enableEmoji            = true
 

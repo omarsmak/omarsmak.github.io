@@ -1,8 +1,8 @@
 
 archetypeDir           = "archetypes"
 author                 = "admin"
-baseUrl                = "https://omarsmak.github.io"
-buildDrafts            = false
+baseUrl                = "https://blog.oalsafi.com"
+buildDrafts            = true
 relativeURLs           = true
 canonifyUrls           = true
 contentDir             = "content"

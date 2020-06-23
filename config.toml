@@ -2,7 +2,7 @@
 archetypeDir           = "archetypes"
 author                 = "admin"
 baseUrl                = "https://blog.oalsafi.com"
-buildDrafts            = true
+buildDrafts            = false
 relativeURLs           = true
 canonifyUrls           = true
 contentDir             = "content"
@@ -21,5 +21,6 @@ enableEmoji            = true
   twitter_username = "omarsmak"  
   github_username = "omarsmak"
   linkedin_username = "omar-al-safi-b7891745"
+  mail_address = "oalsafi@apache.org"
   custom_css = ["css/custom.css"]
   intro = "Software Engineer at Talend and Apache Camel PMC"

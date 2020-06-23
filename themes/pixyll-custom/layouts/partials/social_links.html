@@ -9,4 +9,7 @@
 {{ if isset .Site.Params "linkedin_username" }}
 <a class="fa fa-linkedin linkedin" href="https://www.linkedin.com/in/{{ .Site.Params.linkedin_username }}"></a>
 {{ end }}
+{{ if isset .Site.Params "mail_address" }}
+<a class="fa fa-mail mail" href="mailto:{{ .Site.Params.mail_address }}"></a>
+{{ end }}
 </nav>

@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Omar Al-Safi</title>
-    <link>https://omarsmak.github.io/categories/</link>
+    <link>https://blog.oalsafi.com/categories/</link>
     <description>Recent content in Categories on Omar Al-Safi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://omarsmak.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.oalsafi.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

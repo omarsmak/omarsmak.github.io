@@ -1,4 +1,25 @@
-baseURL = "http://omarsmak.github.io/"
-languageCode = "en-us"
-title = "My New Hugo Site"
-theme = "ananke"
+
+archetypeDir           = "archetypes"
+author                 = "admin"
+baseUrl                = "http://localhost:1313"
+buildDrafts            = false
+relativeURLs           = true
+canonifyUrls           = true
+contentDir             = "content"
+languageCode           = "en-us"
+layoutDir              = "layouts"
+publishDir             = "public"
+theme                  = "pixyll"
+title                  = "Omar Al-Safi"
+enableEmoji            = true
+
+[indexes]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  twitter_username = "omarsmak"  
+  github_username = "omarsmak"
+  linkedin_username = "omar-al-safi-b7891745"
+  custom_css = ["css/custom.css"]
+  intro = "Software Engineer at Talend and Apache Camel PMC"

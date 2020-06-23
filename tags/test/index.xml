@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>test on Omar Al-Safi</title>
-    <link>http://localhost:1313/tags/test/</link>
+    <link>http://omarsmak.github.io/tags/test/</link>
     <description>Recent content in test on Omar Al-Safi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Jun 2020 11:40:24 +0200</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/test/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://omarsmak.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>My First Post</title>
-      <link>http://localhost:1313/post/my-first-post/</link>
+      <link>http://omarsmak.github.io/post/my-first-post/</link>
       <pubDate>Tue, 23 Jun 2020 11:40:24 +0200</pubDate>
       
-      <guid>http://localhost:1313/post/my-first-post/</guid>
+      <guid>http://omarsmak.github.io/post/my-first-post/</guid>
       <description>testaa</description>
     </item>
     

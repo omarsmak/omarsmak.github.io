@@ -2,7 +2,7 @@
   <channel>
       <title>Omar Al-Safi on Omar Al-Safi </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://localhost:1313/</link>
+    <link>http://omarsmak.github.io/</link>
     <language>en-us</language>
     
     
@@ -10,10 +10,10 @@
     
     <item>
       <title>My First Post</title>
-      <link>http://localhost:1313/post/my-first-post/</link>
+      <link>http://omarsmak.github.io/post/my-first-post/</link>
       <pubDate>Tue, 23 Jun 2020 11:40:24 &#43;0200</pubDate>
       
-      <guid>http://localhost:1313/post/my-first-post/</guid>
+      <guid>http://omarsmak.github.io/post/my-first-post/</guid>
       <description>testaa</description>
     </item>
     

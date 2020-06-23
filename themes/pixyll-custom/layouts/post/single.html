@@ -9,6 +9,11 @@
         {{ $baseurl := .Site.BaseURL }}
       </div>
 
+      <div>
+        {{ partial "share-buttons.html" . }}
+      </div>
+      <br/>
+
       <article class="post-content">
       {{ .Content }}
       </article>

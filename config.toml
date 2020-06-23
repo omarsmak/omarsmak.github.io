@@ -12,15 +12,18 @@ publishDir             = "public"
 theme                  = "pixyll-custom"
 title                  = "Omar Al-Safi"
 enableEmoji            = true
+enableRobotsTXT        = true
 
 [indexes]
   category = "categories"
   tag = "tags"
 
 [params]
+  mainSections = ["post"]
   twitter_username = "omarsmak"  
   github_username = "omarsmak"
   linkedin_username = "omar-al-safi-b7891745"
   mail_address = "oalsafi@apache.org"
   custom_css = ["css/custom.css"]
   intro = "Software Engineer at Talend and Apache Camel PMC"
+  google_analytics_id = "UA-170463520-1"

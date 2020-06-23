@@ -1,24 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://omarsmak.github.io/</link>
-    <description>Recent content on My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator>
+      <title>Omar Al-Safi on Omar Al-Safi </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>http://localhost:1313/</link>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jun 2020 11:40:24 +0200</lastBuildDate>
     
-	<atom:link href="http://omarsmak.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    <updated>Tue, 23 Jun 2020 11:40:24 &#43;0200</updated>
     
     <item>
       <title>My First Post</title>
-      <link>http://omarsmak.github.io/posts/my-first-post/</link>
-      <pubDate>Tue, 23 Jun 2020 11:40:24 +0200</pubDate>
+      <link>http://localhost:1313/post/my-first-post/</link>
+      <pubDate>Tue, 23 Jun 2020 11:40:24 &#43;0200</pubDate>
       
-      <guid>http://omarsmak.github.io/posts/my-first-post/</guid>
-      <description>test</description>
+      <guid>http://localhost:1313/post/my-first-post/</guid>
+      <description>testaa</description>
     </item>
     
   </channel>
 </rss>
+

@@ -13,6 +13,7 @@ theme                  = "pixyll-custom"
 title                  = "Omar Al-Safi"
 enableEmoji            = true
 enableRobotsTXT        = true
+disqusShortname        = "omar-al-safi-blog"
 
 [indexes]
   category = "categories"

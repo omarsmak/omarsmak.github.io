@@ -1,7 +1,7 @@
 
 archetypeDir           = "archetypes"
 author                 = "admin"
-baseUrl                = "http://localhost:1313"
+baseUrl                = "http://omarsmak.github.io"
 buildDrafts            = false
 relativeURLs           = true
 canonifyUrls           = true

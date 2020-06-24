@@ -11,7 +11,9 @@
                     {{ if isset .Site.Params "paginate" }}
                         {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) .Site.Params.paginate }}
                         {{ range $paginator.Pages.ByDate.Reverse }}
-                            {{ .Render "summary" }}
+                            {{ if eq .Draft false }}
+                                {{ .Render "summary" }}
+                            {{end}}
                         {{ end }}
                 </div>
             </div>
@@ -22,7 +24,9 @@
                     {{ else }}
                         {{ range first 10 .Site.RegularPages.ByDate.Reverse }}
                             {{ if eq .Type "post" }}
-                                {{ .Render "summary"}}
+                                {{ if eq .Draft false }}
+                                    {{ .Render "summary"}}
+                                {{ end }}    
                             {{ end }}
                         {{ end }}
                     {{ end }}

@@ -2,7 +2,7 @@
 archetypeDir           = "archetypes"
 author                 = "admin"
 baseUrl                = "https://blog.oalsafi.com"
-buildDrafts            = false
+buildDrafts            = true
 relativeURLs           = true
 canonifyUrls           = true
 contentDir             = "content"

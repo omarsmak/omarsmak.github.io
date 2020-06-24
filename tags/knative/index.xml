@@ -1,17 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Omar Al-Safi on Omar Al-Safi </title>
-      <generator uri="https://gohugo.io">Hugo</generator>
-    <link>https://blog.oalsafi.com/</link>
+    <title>knative on Omar Al-Safi</title>
+    <link>https://blog.oalsafi.com/tags/knative/</link>
+    <description>Recent content in knative on Omar Al-Safi</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 24 Jun 2020 10:10:00 +0200</lastBuildDate>
     
+	<atom:link href="https://blog.oalsafi.com/tags/knative/index.xml" rel="self" type="application/rss+xml" />
     
-    <updated>Wed, 24 Jun 2020 10:10:00 &#43;0200</updated>
     
     <item>
       <title>Deploy Native Camel Quarkus Routes To Azure Kubernetes Cluster With Knative</title>
       <link>https://blog.oalsafi.com/post/deploy-camel-quarkus-to-azure-knative/</link>
-      <pubDate>Wed, 24 Jun 2020 10:10:00 &#43;0200</pubDate>
+      <pubDate>Wed, 24 Jun 2020 10:10:00 +0200</pubDate>
       
       <guid>https://blog.oalsafi.com/post/deploy-camel-quarkus-to-azure-knative/</guid>
       <description>In this blog, we will take close look on how we can deploy Camel Quarkus routes compiled natevly using GraalVM on Azure Kubernets cluster with Knative installed. But first, we will give a brief overview.
@@ -19,15 +22,5 @@
 Apache Camel Quarkus is a runtime to run Apache Camel routes as Quarkus extensions, which as result utilizes all the performance optimizations brought by Quarkus with GraalVM and thus, allows Camel Routes to be compiled natively using GraalVM native-image generator.</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>https://blog.oalsafi.com/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 UTC</pubDate>
-      
-      <guid>https://blog.oalsafi.com/about/</guid>
-      <description>testaa</description>
-    </item>
-    
   </channel>
 </rss>
-

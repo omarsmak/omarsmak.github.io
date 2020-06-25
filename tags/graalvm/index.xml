@@ -17,7 +17,7 @@
       <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oalsafi.com/post/deploy-camel-quarkus-to-azure-knative/</guid>
-      <description>In this blog, we will take close look on how we can deploy Camel Quarkus routes compiled natively using GraalVM Native Image generator on Azure Kubernets cluster with Knative installed. But first, we will give a brief overview about Camel, Camel Quarkus, Knative and GraalVM Native Image.
+      <description>In this blog, we will take a close look on how we can deploy Camel Quarkus routes compiled natively using GraalVM Native Image generator on Azure Kubernets cluster with Knative installed. But first, we will give a brief overview about Camel, Camel Quarkus, Knative and GraalVM Native Image.
  Overview Apache Camel is a swiss knife integration engine that can be used to integrate between different components within the system using Enterprise Integration Patterns.</description>
     </item>
     

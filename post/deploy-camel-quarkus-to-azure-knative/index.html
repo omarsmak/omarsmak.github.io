@@ -98,18 +98,18 @@ text-align: center;
 
       <article class="post-content">
       <p><img src="../../images/header.png" alt="image"></p>
-<p>In this blog, we will take close look on how we can deploy Camel Quarkus routes compiled natively using GraalVM Native Image generator on Azure Kubernets cluster with Knative installed. But first, we will give a brief overview about Camel, Camel Quarkus, Knative and GraalVM Native Image.</p>
+<p>In this blog, we will take a close look on how we can deploy Camel Quarkus routes compiled natively using GraalVM Native Image generator on Azure Kubernets cluster with Knative installed. But first, we will give a brief overview about Camel, Camel Quarkus, Knative and GraalVM Native Image.</p>
 <p> </p>
 <h3 id="overview">Overview</h3>
-<p><a href="https://camel.apache.org/">Apache Camel</a> is a swiss knife integration engine that can be used to integrate between different components within the system using <a href="https://www.enterpriseintegrationpatterns.com/">Enterprise Integration Patterns</a>. Currently there over 300+ components that can be used to integrate wide range of external systems.</p>
-<p><a href="https://camel.apache.org/camel-quarkus/latest/">Apache Camel Quarkus</a> is a runtime to run Apache Camel routes as <a href="https://quarkus.io/">Quarkus</a> extensions, which as result utilizes all the performance optimizations brought by Quarkus with GraalVM and thus, allows Camel Routes to be compiled natively using <a href="https://www.graalvm.org/docs/reference-manual/native-image/">GraalVM native-image generator</a>.</p>
-<p><a href="https://www.graalvm.org/docs/reference-manual/native-image/">GraalVM Native Image</a> a generator that performs AOT (Ahead-of-Time) compilation of Jave code to a standalone binaries targeting the build the environment that you specify. In contrast to JIT (Just-in-Time) compiler where it compiles the Java bytecode to native code during <strong>runtime</strong>, the AOT compiler will analyze and compile application classes, classes from its dependencies, runtime library classes from JDK and statically linked native code from JDK to native code during the <strong>compile time</strong>. Thus, resulting program will require <strong>lower footprint</strong> in terms of memory usage as well as faster startup time compared to a Java VM. The compiled binary doesn&rsquo;t include the traditional Java VM, but includes a lightweight VM called &ldquo;Substrate VM&rdquo; which includes only the necessary components like memory management and thread scheduling.</p>
+<p><a href="https://camel.apache.org/">Apache Camel</a> is a swiss knife integration engine that can be used to integrate between different components within the system using <a href="https://www.enterpriseintegrationpatterns.com/">Enterprise Integration Patterns</a>. Currently there are over 300+ components that can be used to integrate a wide range of external systems.</p>
+<p><a href="https://camel.apache.org/camel-quarkus/latest/">Apache Camel Quarkus</a> is a runtime to run Apache Camel routes as <a href="https://quarkus.io/">Quarkus</a> extensions, which as a result utilizes all the performance optimizations brought by Quarkus with GraalVM and thus, allows Camel Routes to be compiled natively using <a href="https://www.graalvm.org/docs/reference-manual/native-image/">GraalVM native-image generator</a>.</p>
+<p><a href="https://www.graalvm.org/docs/reference-manual/native-image/">GraalVM Native Image</a> a generator that performs AOT (Ahead-of-Time) compilation of Java code to a standalone binaries targeting the build environment that you specify. In contrast to JIT (Just-in-Time) compiler where it compiles the Java bytecode to native code during <strong>runtime</strong>, the AOT compiler will analyze and compile application classes, classes from its dependencies, runtime library classes from JDK and statically linked native code from JDK to native code during the <strong>compile time</strong>. Thus, resulting program will require <strong>lower footprint</strong> in terms of memory usage as well as faster startup time compared to a Java VM. The compiled binary doesn&rsquo;t include the traditional Java VM, but includes a lightweight VM called &ldquo;Substrate VM&rdquo; which includes only the necessary components like memory management and thread scheduling.</p>
 <p><a href="https://knative.dev/">Knative</a> is a project that allows deploying, running and managing cloud-native applications to Kubernetes. It allows developers to focus on code instead of worrying about setting up a infrastructure. For instance, many of the complex and repetitive tasks that Kubernetes requires such as configuration managements, logging, tracing, traffic management, blue/green deployment .. etc, can be provided by Knative by facilitating other important components like Istio to accomplish these tasks.</p>
-<p>Next, we will take step by step approach on how we can setup our cluster in Azure Kubernetes Cloud (AKS), setting up Knative there and deploying our routes for development environment.</p>
+<p>Next, we will take a step by step approach on how we can setup our cluster in Azure Kubernetes Cloud (AKS), setting up Knative there and deploying our routes for development environment.</p>
 <p> </p>
 <h3 id="setting-up-azure-kubernetes-cloud-aks">Setting up Azure Kubernetes Cloud (AKS)</h3>
 <ol>
-<li>Create the K8s cluster AKS great <a href="https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough">walkthrough</a>. However for the sake of our testing environment, you will need to enable <a href="https://docs.microsoft.com/en-us/azure/aks/http-application-routing">HTTP application routing</a> which allows us to access deployed Camel routes publicly. However this should be only done if you need a <strong>development</strong> environment.</li>
+<li>Create the K8s cluster AKS great <a href="https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough">walkthrough</a>. For the sake of our testing environment, you will need to enable <a href="https://docs.microsoft.com/en-us/azure/aks/http-application-routing">HTTP application routing</a> which allows us to access deployed Camel routes publicly. However this should be only done if you need a <strong>development</strong> environment.</li>
 <li>Once you have everything setup, you can access your K8s dashboard through this command:</li>
 </ol>
 <pre><code>az aks browse --resource-group camel-dev --name test
@@ -126,7 +126,7 @@ text-align: center;
 </ol>
 <pre><code>kubectl apply --filename https://github.com/knative/serving/releases/download/v0.15.0/serving-core.yaml
 </code></pre><ol start="3">
-<li>To make sure that Knative has installed correctly in our cluster, we will need to run the following commands:</li>
+<li>To make sure that Knative has been installed correctly in our cluster, we will need to run the following commands:</li>
 </ol>
 <pre><code>kubectl get pods --namespace knative-serving
 </code></pre><p>It should report all the pods in <code>Running</code> status, similar to this output:</p>
@@ -137,7 +137,7 @@ controller-bbdd78bc4-sr5t6          2/2     Running   10         5d23h
 istio-webhook-7578df5df5-gl5d2      2/2     Running   8          5d23h
 networking-istio-8444c7c995-ksxd6   1/1     Running   2          5d23h
 webhook-68bb66b676-wxgf4            2/2     Running   9          5d23h
-</code></pre><p>Now we have done the basic component Knative setup, we need now to install the networking layer using Istio.</p>
+</code></pre><p>Now we have done the basic component Knative setup, we need to install the networking layer using Istio.</p>
 <p> </p>
 <h3 id="setting-up-istio">Setting up Istio</h3>
 <p>Knative uses <a href="https://istio.io/">Istio</a> as newtwork layer facilitator, which means in theory you are not bound to it. However for the sake of this blog, we will stick to Istio. To setup, we need to execute the following steps:</p>
@@ -151,7 +151,7 @@ webhook-68bb66b676-wxgf4            2/2     Running   9          5d23h
 </ol>
 <pre><code>istioctl install --set profile=default
 </code></pre><ol start="3">
-<li>We need to make sure that istio will inject Envoy sidecar automatically, we need to the following label our namespace (change <code>default</code> namespace with yours):</li>
+<li>We need to make sure that istio will inject Envoy sidecar automatically, therefore we need to label our namespace (change <code>default</code> namespace with yours) with <code>istio-injection=enabled</code>:</li>
 </ol>
 <pre><code>kubectl label namespace default istio-injection=enabled
 </code></pre><ol start="4">
@@ -162,7 +162,7 @@ webhook-68bb66b676-wxgf4            2/2     Running   9          5d23h
 <li>Let&rsquo;s verify everything using this command:</li>
 </ol>
 <pre><code>kubectl get pods --namespace istio-system
-</code></pre><p>We should see the core pods up and running like the following, note this maybe different depending on the Istio components you chose to install:</p>
+</code></pre><p>We should see the core pods up and running like the following, note this may be different depending on the Istio components you chose to install:</p>
 <pre><code>NAME                                    READY   STATUS    RESTARTS   AGE
 grafana-74dc798895-2x5rp                1/1     Running   2          5d23h
 istio-egressgateway-6b9fff7b95-dnpxn    1/1     Running   2          5d23h
@@ -189,7 +189,7 @@ kiali-6f457f5964-jshp8                  1/1     Running   2          5d23h
 istio-ingressgateway   LoadBalancer   10.0.62.123   51.663.129.394   15020:31360/TCP,80:30538/TCP,443:32235/TCP,31400:31897/TCP,15443:32677/TCP   5d23h
 </code></pre><p>In the above command, note the external IP <code>51.663.129.394</code>.</p>
 <ol start="3">
-<li>In Azure Portal, by enabling HTTP application routing in Azure, it will create for us a DNS zone as well loadbalancer. Search for <code>DNS Zone</code>. You will find a DNS Zone entry similar to this:</li>
+<li>In Azure Portal, by enabling HTTP application routing in Azure, it will create for us a DNS zone as well as a loadbalancer. Search for <code>DNS Zone</code>. You will find a DNS Zone entry similar to this:</li>
 </ol>
 <pre><code>f54545e10oos66652.germanywestcentral.aksapp.io
 </code></pre><p>This would be our suffix custom domain for the routes URLs. We will explain later how the final URL will look like.</p>
@@ -208,7 +208,7 @@ IP Address: <code>51.663.129.394</code></p>
   --namespace knative-serving \
   --type merge \
   --patch '{&quot;data&quot;:{&quot;f54545e10oos66652.germanywestcentral.aksapp.io&quot;:&quot;&quot;}}'
-</code></pre><p>After all these steps, now whenever you deploy an application to knative, the generated URL to access your application will be in this format: <code>{APP_NAME}.{NAMESPACE_NAME}.{DNS_ZONE_URL}</code>. For example running command <code>kubectl get ksvc -n default</code> should gives list of deployed application in <code>default</code> namespace with the URL to access:</p>
+</code></pre><p>After all these steps, now whenever you deploy an application to knative, the generated URL to access your application will be in this format: <code>{APP_NAME}.{NAMESPACE_NAME}.{DNS_ZONE_URL}</code>. For example running command <code>kubectl get ksvc -n default</code> should give a list of deployed applications in <code>default</code> namespace with the URL to access:</p>
 <pre><code>NAME                     URL                                                                                       LATESTCREATED               LATESTREADY                 READY   REASON
 camel-quarkus-rest       http://camel-quarkus-rest.default.f54545e10oos66652.germanywestcentral.aksapp.io       camel-quarkus-rest-v1       camel-quarkus-rest-v1       True
 </code></pre><p>Now we can move on to Camel and deploy an example route to our newly created cluster.</p>
@@ -216,7 +216,7 @@ camel-quarkus-rest       http://camel-quarkus-rest.default.f54545e10oos66652.ger
 <h3 id="building-and-deploying-a-camel-quarkus-route">Building and Deploying a Camel Quarkus Route</h3>
 <ol>
 <li>
-<p>As we want to build our route natively, we will need first to setup GraalVM correctly, this includes setting <code>native-image</code> generator. <a href="https://quarkus.io/guides/building-native-image">This guide</a> has a great explanation on how to setup GraalVM correctly.</p>
+<p>As we want to build our route natively, we will first need to setup GraalVM correctly, this includes setting <code>native-image</code> generator. <a href="https://quarkus.io/guides/building-native-image">This guide</a> has a great explanation on how to setup GraalVM correctly.</p>
 </li>
 <li>
 <p>Clone <a href="https://github.com/omarsmak/camel-talk-examples/tree/master/camel-quarkus-rest">this example route</a> and build it using <code> ../mvnw clean package</code>.</p>
@@ -231,7 +231,7 @@ camel-quarkus-rest       http://camel-quarkus-rest.default.f54545e10oos66652.ger
 </ol>
 <pre><code>docker build -f Dockerfile.native -t {USERNAME}/camel-quarkus-rest .
 </code></pre><ol start="5">
-<li>Push the generated Docker image to your Docker hub via this command, you will need exchange <code>{USERNAME}</code> with your Dockerhub username:</li>
+<li>Push the generated Docker image to your Docker hub via this command, you will need to exchange <code>{USERNAME}</code> with your Dockerhub username:</li>
 </ol>
 <pre><code>docker push {USERNAME}/camel-quarkus-rest.
 </code></pre><ol start="6">
@@ -253,7 +253,7 @@ spec:
     - tag: latest
       latestRevision: true
       percent: 100
-</code></pre><p>As above, <code>metadata</code> block contains our route name in Knative. In <code>spec</code> block, we tell Knative to fetch our app from a specific docker image. However, you will need to exchange <code>{USERNAME}</code> with your Docker hub username. Also, notice our suffix in the metadata name <code>camel-quarkus-rest-v1</code>, <code>v1</code> here is used for our deployment revision tagging. For example, if we deploy a <code>v2</code> of this app, we will need to change revision name to <code>camel-quarkus-rest-v2</code>. This is can used for in the traffic splitting or blue/green deployment, for instance, we can tell Knative to serve 70% of the traffic with <code>v1</code> and 30% of the traffic with <code>v2</code> using the <code>traffic</code> block:</p>
+</code></pre><p>As above, <code>metadata</code> block contains our route name in Knative. In <code>spec</code> block, we tell Knative to fetch our app from a specific docker image. However, you will need to exchange <code>{USERNAME}</code> with your Docker hub username. Also, notice our suffix in the metadata name <code>camel-quarkus-rest-v1</code>, <code>v1</code> here is used for our deployment revision tagging. For example, if we deploy a <code>v2</code> of this app, we will need to change revision name to <code>camel-quarkus-rest-v2</code>. This can be used for traffic splitting or blue/green deployment, for instance, we can tell Knative to serve 70% of the traffic with <code>v1</code> and 30% of the traffic with <code>v2</code> using the <code>traffic</code> block:</p>
 <pre><code>traffic:
     - tag: v2
       percent: 30
@@ -262,7 +262,7 @@ spec:
 </code></pre><p>There are many great ways that Knative could do this, you may refer to this <a href="https://knative.dev/docs/serving/samples/blue-green-deployment/">documentation</a> for more detailed explanation on how to use it.</p>
 <ol start="7">
 <li>
-<p>Once we have <code>service.yml</code> ready, now we can deploy our route using <code>kubectl apply --filename service.yaml</code>.</p>
+<p>Once we have <code>service.yml</code> ready, we can deploy our route using <code>kubectl apply --filename service.yaml</code>.</p>
 </li>
 <li>
 <p>To access our application, we run this command <code>kubectl get ksvc -n default</code> which should give us the URLs for our deployed applications in <code>default</code> namespace. It will give something like this:</p>
@@ -277,7 +277,7 @@ Text is: awesome Camel%
 Now you can deploy any Camel routes or applications with ease and utilize all the good benefits from Knative.</p>
 <p> </p>
 <h3 id="monitoring">Monitoring</h3>
-<p>Monitoring and observability are important for any Cloud environment. Lucky, Knative include all the needed batteries to have your monitoring environment set in just few commands.</p>
+<p>Monitoring and observability are important for any Cloud environment. Lucky, Knative includes all the needed batteries to have your monitoring environment set in just few commands.</p>
 <ol>
 <li>We need to install the core of the observability features using this command:</li>
 </ol>
@@ -303,7 +303,7 @@ $(kubectl get pods --namespace knative-monitoring \
 </ol>
 <pre><code>kubectl proxy
 </code></pre><p>The Kibana UI is accessible through <a href="http://localhost:8001/api/v1/namespaces/knative-monitoring/services/kibana-logging/proxy/app/kibana">http://localhost:8001</a>.</p>
-<p>To install more observability features and detailed guide, you can take a look at this <a href="https://knative.dev/docs/serving/accessing-metrics/">documentation</a></p>
+<p>You can take a look at this <a href="https://knative.dev/docs/serving/accessing-metrics/">documentation</a> to find a detailed guide and further information on how to install more observability features.</p>
 
       </article>
 

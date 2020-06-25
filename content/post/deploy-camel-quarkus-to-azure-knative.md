@@ -253,6 +253,6 @@ The Grafana UI is accessible through: [http://localhost:3000](http://localhost:3
 ```
 kubectl proxy
 ```
-The Kibana UI is accessible through [http://llocalhost:8001](http://localhost:8001/api/v1/namespaces/knative-monitoring/services/kibana-logging/proxy/app/kibana). 
+The Kibana UI is accessible through [http://localhost:8001](http://localhost:8001/api/v1/namespaces/knative-monitoring/services/kibana-logging/proxy/app/kibana). 
 
 To install more observability features and detailed guide, you can take a look at this [documentation](https://knative.dev/docs/serving/accessing-metrics/)

@@ -105,7 +105,7 @@ kiali-6f457f5964-jshp8                  1/1     Running   2          5d23h
 &nbsp;
 
 ### Configure DNS
-In this blog, we would like to setup our cluster in such way that we can access our deployed Camel routes publicly for **development** purposes. The application1 URL will be in this format:
+In this blog, we would like to setup our cluster in such way that we can access our deployed Camel routes publicly for **development** purposes. The application URL will be in this format:
 ```
 {APP_NAME}.{NAMESPACE_NAME}.{DNS_ZONE_URL}
 ```

@@ -219,7 +219,7 @@ Let's try our URL now:
 curl http://camel-quarkus-rest.default.f54545e10oos66652.germanywestcentral.aksapp.io/hello\?q\=awesome%20Camel                                                                                                                                       
 Text is: awesome Camel%
 ```
-**And viola!** \
+**And voilà!** \
  Now you can deploy any Camel routes or applications with ease and utilize all the good benefits from Knative. 
 
 &nbsp;

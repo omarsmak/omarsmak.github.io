@@ -6,7 +6,7 @@
     <description>Recent content in azure on Omar Al-Safi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Jun 2020 10:10:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.oalsafi.com/tags/azure/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,12 +14,11 @@
     <item>
       <title>Deploy Native Camel Quarkus Routes To Azure Kubernetes Cluster With Knative</title>
       <link>https://blog.oalsafi.com/post/deploy-camel-quarkus-to-azure-knative/</link>
-      <pubDate>Wed, 24 Jun 2020 10:10:00 +0200</pubDate>
+      <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.oalsafi.com/post/deploy-camel-quarkus-to-azure-knative/</guid>
-      <description>In this blog, we will take close look on how we can deploy Camel Quarkus routes compiled natevly using GraalVM on Azure Kubernets cluster with Knative installed. But first, we will give a brief overview.
- Overview Apache Camel is a swiss knife integration engine that can be used to integrate between different components within the system using Enterprise Integration Patterns.
-Apache Camel Quarkus is a runtime to run Apache Camel routes as Quarkus extensions, which as result utilizes all the performance optimizations brought by Quarkus with GraalVM and thus, allows Camel Routes to be compiled natively using GraalVM native-image generator.</description>
+      <description>In this blog, we will take close look on how we can deploy Camel Quarkus routes compiled natevly using GraalVM Native Image generator on Azure Kubernets cluster with Knative installed. But first, we will give a brief overview about Camel, Camel Quarkus, Knative and GraalVM Native Image.
+ Overview Apache Camel is a swiss knife integration engine that can be used to integrate between different components within the system using Enterprise Integration Patterns.</description>
     </item>
     
   </channel>

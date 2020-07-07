@@ -7,7 +7,7 @@ tags: ["camel", "quarkus", "graalvm", "azure", "knative"]
 
 ![image](/images/header.png)
 
-In this blog, we will take a close look on how we can deploy Camel Quarkus routes compiled natively using GraalVM Native Image generator on Azure Kubernets cluster with Knative installed. But first, we will give a brief overview about Camel, Camel Quarkus, Knative and GraalVM Native Image.
+In this blog, we will take a close look on how we can deploy Camel Quarkus routes compiled natively using GraalVM Native Image generator on Azure Kubernetes cluster with Knative installed. But first, we will give a brief overview about Camel, Camel Quarkus, Knative and GraalVM Native Image.
 
 &nbsp;
 

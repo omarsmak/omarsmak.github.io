@@ -102,6 +102,11 @@ istiod-69bbcb65c-g9dfp                  1/1     Running   2          5d23h
 kiali-6f457f5964-jshp8                  1/1     Running   2          5d23h
 ```
 
+6. Last step, we will need to install Knative Istio controller through this command:
+```
+kubectl apply --filename https://github.com/knative/net-istio/releases/download/v0.15.0/release.yaml
+```
+
 &nbsp;
 
 ### Configure DNS

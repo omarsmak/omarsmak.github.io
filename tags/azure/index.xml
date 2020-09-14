@@ -6,11 +6,7 @@
     <description>Recent content in azure on Omar Al-Safi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Jun 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.oalsafi.com/tags/azure/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 25 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.oalsafi.com/tags/azure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploy Native Camel Quarkus Routes To Azure Kubernetes Cluster With Knative</title>
       <link>https://blog.oalsafi.com/post/deploy-camel-quarkus-to-azure-knative/</link>

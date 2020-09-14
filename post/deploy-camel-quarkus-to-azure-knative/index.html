@@ -170,6 +170,10 @@ istio-ingressgateway-5f5b59696c-rwkkw   1/1     Running   2          5d23h
 istio-tracing-8584b4d7f9-nqncf          1/1     Running   2          5d23h
 istiod-69bbcb65c-g9dfp                  1/1     Running   2          5d23h
 kiali-6f457f5964-jshp8                  1/1     Running   2          5d23h
+</code></pre><ol start="6">
+<li>Last step, we will need to install Knative Istio controller through this command:</li>
+</ol>
+<pre><code>kubectl apply --filename https://github.com/knative/net-istio/releases/download/v0.15.0/release.yaml
 </code></pre><p> </p>
 <h3 id="configure-dns">Configure DNS</h3>
 <p>In this blog, we would like to setup our cluster in such way that we can access our deployed Camel routes publicly for <strong>development</strong> purposes. The application URL will be in this format:</p>

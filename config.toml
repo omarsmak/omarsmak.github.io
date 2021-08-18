@@ -26,5 +26,5 @@ disqusShortname        = "omar-al-safi-blog"
   linkedin_username = "omar-al-safi-b7891745"
   mail_address = "oalsafi@apache.org"
   custom_css = ["css/custom.css"]
-  intro = "Software Engineer at Talend and Apache Camel PMC"
+  intro = "Open Source Sotware Engineer and Apache Camel PMC"
   google_analytics_id = "UA-170463520-1"
